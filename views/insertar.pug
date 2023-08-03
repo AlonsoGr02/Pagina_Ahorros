@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Insertar Cuenta
+    link(rel='stylesheet', href='/stylesheets/insertar.css')
+  body
+    .navbar
+      nav
+        a(href='/index') Regresar al Inicio
+    h1 Insertar Cuenta de Ahorro
+    div.centered-image-container
+      img(src='/images/Banco2.gif', alt='Banco')
+    if error
+      .error-message
+        p= error
+    form(action='/insertar', method='post')
+      input.rounded(type="text", placeholder="Cedula", name="txtCedula", required)
+      input.rounded(type="text", placeholder="Nombre", name="txtNombre", required)
+      input.rounded(type="text", placeholder="Primer Apellido", name="txtApellido1", required)
+      input.rounded(type="text", placeholder="Segundo Apellido", name="txtApellido2", required)
+      input.rounded(type="text", placeholder="Deposito en ₡", name ="txtDeposito", required)
+      button.button(type="submit", id="agregar") Agregar
+
+     
+

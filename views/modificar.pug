@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title Modificar Cuenta de Ahorro
+    link(rel='stylesheet', href='/stylesheets/modificar.css')
+  body
+    div.navbar
+      nav
+        a(href='/index') Regresar al Inicio
+    h1 Modificar y Consultar Cuenta de Ahorro
+    div.row
+      h3
+    div.main
+      // Tabla de las cuentas de ahorros disponibles
+      table
+        thead
+          tr
+            th Cedula
+            th Nombre
+            th Primer Apellido
+            th Segundo Apellido
+            th Deposito Inicial
+        tbody
+          // Aquí debes verificar si el usuario fue encontrado antes de mostrarlo en la tabla
+          if usuario
+            tr
+              td= usuario.cedula
+              td= usuario.nombre
+              td= usuario.apellido1
+              td= usuario.apellido2
+              td= usuario.deposito
+    form(action='/modificar', method='post')
+      // En el formulario, utiliza el valor ingresado previamente (txtCedula) si está disponible
+      input.rounded(type='text', placeholder='Cedula', name='txtCedula', value=txtCedula, required)
+      input.rounded(type='text', placeholder='Nuevo Nombre', name='txtNombre', value=usuario && usuario.nombre)
+      input.rounded(type='text', placeholder='Nuevo Primer Apellido', name='txtApellido1', value=usuario && usuario.apellido1)
+      input.rounded(type='text', placeholder='Nuevo Segundo Apellido', name='txtApellido2', value=usuario && usuario.apellido2)
+      input.rounded(type='text', placeholder='Nuevo Deposito en ₡', name='txtDeposito', value=usuario && usuario.deposito)
+      button.button(type='submit', name='btnActualizar', value=btnActualizar) Actualizar Datos
+      button.button(type='submit', name='action', value='Buscar') Buscar
+    label#lblResultado= mensaje

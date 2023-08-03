@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title Eliminar Cuenta de Ahorro
+    link(rel='stylesheet', href='/stylesheets/eliminar.css')
+  body
+    div.navbar
+      nav
+        a(href='/index') Regresar al Inicio
+    h1 Eliminar Cuenta de Ahorro
+    div.row
+      h3
+    div.main
+      // Información del usuario a eliminar
+      table
+        thead
+          tr
+            th Cedula
+            th Nombre
+            th Primer Apellido
+            th Segundo Apellido
+            th Deposito Inicial
+        tbody
+          if usuario
+            tr
+              td= usuario.cedula
+              td= usuario.nombre
+              td= usuario.apellido1
+              td= usuario.apellido2
+              td= usuario.deposito
+      // Formulario de eliminación
+      form(action='/eliminar', method='post')
+        input(type='text', placeholder='Cedula', name='txtCedula', value=txtCedula, required)
+        button(type='submit', name='action', value='Eliminar') Eliminar
+

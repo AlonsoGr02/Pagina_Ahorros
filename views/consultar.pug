@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Consulta
+    link(rel='stylesheet', href='/stylesheets/consultar.css')
+  body
+    .navbar
+      nav
+        a(href='/index') Regresar al Inicio
+
+    //- Contenedor para el formulario de consulta y la tabla de resultados
+    .container
+      h3 Consulta de cuentas de Ahorros
+      //- Formulario de consulta
+      form(action='/consultar', method='POST')
+        h2 Informacion de Consulta
+        input(type='text', class='rounded', placeholder='Ingresa una Cedula a Consultar', name='txtCedula', value=txtCedula, required)
+        button(type='submit', class='button', id='btnConsulta') Consultar
+
+      //- Tabla de las cuentas de ahorros disponibles
+      table
+        thead
+          tr
+            th Cedula
+            th Nombre
+            th Primer Apellido
+            th Segundo Apellido
+            th Deposito Inicial
+        tbody
+          if usuario
+            tr
+              td= usuario.cedula
+              td= usuario.nombre
+              td= usuario.apellido1
+              td= usuario.apellido2
+              td= usuario.deposito
+
+    //- Etiqueta para mostrar el mensaje de resultado o error
+    label#lblResultado #{mensaje}

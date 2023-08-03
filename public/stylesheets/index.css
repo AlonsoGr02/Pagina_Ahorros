@@ -1,0 +1,71 @@
+/* stylesheets/index.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 252, 255);
+}
+
+h1 {
+  color: #336699;
+  text-align: center;
+  margin-top: 30px;
+}
+
+h3 {
+  color: #444;
+  text-align: center;
+}
+
+.navbar {
+  background-color: #336699;
+  padding: 10px;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #2c5a8d;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo adicional para enlaces activos */
+.navbar a[href='/' i] {
+  background-color: #2c5a8d;
+}
+.centered-image-container {
+  text-align: center;
+  margin-top: 20px; /* Añadimos un margen superior para separar la imagen del contenido anterior */
+}
+
+/* Estilo para la imagen centrada */
+.centered-image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centramos horizontalmente la imagen */
+}
+
+
+
+
+
+
